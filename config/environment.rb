@@ -5,7 +5,7 @@ require File.expand_path('../application', __FILE__)
 Artrequest::Application.initialize!
 
 
-ActionMailer::Baser.smtp_settings = {
+ActionMailer::Base.smtp_settings = {
   :address        => 'smtp.sendgrid.net',
   :port           => '587',
   :authentication => :plain,
