@@ -6,9 +6,17 @@ Contact Email :  <%= @request.contact %>
 Due Date :  <%= @request.duedate %>
 Required ASAP? :  <% if @request.asap == true %><%= "Yes" %> <% else %><%= "No" %><% end %>
 Art Type : <%= @request.type %>
-Description :  <%= @request.description %>
-Specifications :  <%= @request.specifications %>
+Short Description :  <%= @request.description %>
+Art Specifications :  <%= @request.specifications %>
+      <% if @request.references == nil || @request.references.empty? %>
+      <% else %>
 References : <%= @request.references %>
+	  <% end %>
+	  <% if @request.comments == nil || @request.comments.empty? %>
+      <% else %>
 Comments : <%= @request.comments %>
-Needs Art Review? <% if @request.artreview == true %><%= "Yes" %><% else %><%= "No" %><% end %>
-Needs Content Review? <% if @request.contentreview == true %><%= "Yes" %><% else %><%= "No" %><% end %>
+	  <% end %>
+
+Status : <%= @request.status %>
+
+All requests can be found here :  http://mighty-beach-3814.herokuapp.com/requests/

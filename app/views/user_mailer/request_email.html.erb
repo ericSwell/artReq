@@ -44,32 +44,34 @@
   <td><%= @request.type %></td>
 </tr>
 <tr>
-  <td>Description : </td>
+  <td>Short Description : </td>
   <td><%= @request.description %></td>
 </tr>
 <tr>
-  <td>Specifications : </td>
+  <td>Art Specifications : </td>
   <td><%= @request.specifications %></td>
 </tr>
+      <% if @request.references == nil || @request.references.empty? %>
+      <% else %>
 <tr>
   <td>References : </td>
   <td><%= @request.references %></td>
 </tr>
+      <% end %>
+      <% if @request.comments == nil || @request.comments.empty? %>
+      <% else %>
 <tr>
   <td>Comments : </td>
   <td><%= @request.comments %></td>
 </tr>
+      <% end %>
 <tr>
-  <td>Needs Art Review? </td>
-  <td><% if @request.artreview == true %><%= "Yes" %><% else %><%= "No" %><% end %></td>
-</tr>
-<tr>
-  <td>Needs Content Review? </td>
-  <td> <% if @request.contentreview == true %><%= "Yes" %><% else %><%= "No" %><% end %></td>
+  <td>Status : </td>
+  <td><%= @request.status %></td>
 </tr>
 <tr><td><br/></td></tr>
 <tr>
-  <td colspan="2">View all Requests <a href="http://immense-retreat-5635.herokuapp.com/requests/" style="color:white;">here.</a></td>
+  <td colspan="2">View all Requests <a href="http://mighty-beach-3814.herokuapp.com/requests/" style="color:white;">here.</a></td>
 </tr>
 
 </table>
