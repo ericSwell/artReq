@@ -1,0 +1,101 @@
+<%= form_for(@request) do |f| %>
+  <% if @request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
+
+      <ul>
+      <% @request.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="leftColumn">
+      <div class="row">
+          <label>Account Name<span class="required">*</span> :</label>
+      </div>
+      <div class="row">
+          <label>Request Title<span class="required">*</span> :</label>
+      </div>
+      <div class="row">
+          <label>Contact Email<span class="required">*</span> :</label>
+      </div>
+      <div class="row">
+          <label>Due Date<span class="required">*</span> :</label>
+      </div>
+      <div class="row">
+          <label>Art Type<span class="required">*</span> :</label>
+      </div>
+      <div class="textAreaRow">
+          <label>Short Description<span class="required">*</span> :</label>
+      </div>
+      <div class="textAreaRow">
+          <label>Art Specification<span class="required">*</span> :</label>
+      </div>
+      <div class="textAreaRow">
+          <label>References :</label>
+      </div>
+      <div class="textAreaRow">
+          <label>Comments :</label>
+      </div>
+      <div class="textAreaRow">
+          <label>Status :</label>
+      </div>
+      <!--
+      <div class="row">
+          <label>Needs Art Review?</label>
+      </div>
+      <div class="row">
+          <label>Needs Content Review?</label>
+      </div>
+      -->
+  </div>
+
+  <div class="rightColumn">
+      <div class="row">
+          <%= f.text_field :accountname, :placeholder => "Nike" %>
+      </div>
+      <div class="row">
+          <%= f.text_field :requestname, :placeholder => "Website Images" %>
+      </div>
+      <div class="row">
+          <%= f.text_field :contact, :placeholder => "nick@swellny.com" %>
+      </div>
+      <div class="row">
+          <%= f.date_select :duedate %>
+          <span class="datecheck">Required ASAP?</span>
+          <%= f.check_box :asap %>
+      </div>
+      <div class="row">
+          <%= f.select :type,["Wireframe","Rough Art","Mock-Up","Final Art"] %>
+      </div>
+      <div class="textAreaRow">
+          <%= f.text_area :description %>
+      </div>
+      <div class="textAreaRow">
+          <%= f.text_area :specifications %>
+      </div>
+      <div class="textAreaRow">
+          <%= f.text_area :references %>
+      </div>
+      <div class="textAreaRow">
+          <%= f.text_area :comments %>
+      </div>
+      <div class="textAreaRow">
+          <%= f.select :status,["Initial Request","Work in Progress","Finished","Disapproved"] %>
+      </div>
+      <!--
+      <div class="row">
+          <%= f.check_box :artreview %>
+      </div>
+      <div class="row">
+          <%= f.check_box :contentreview %>
+      </div>
+    -->
+      <div class="actions">
+          <%= f.submit %>
+      </div>
+  </div>
+
+<% end %>

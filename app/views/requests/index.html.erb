@@ -1,0 +1,52 @@
+<h1>Listing requests</h1>
+
+<table class="showall">
+<thead>
+<span class="tabletitle">ASAP Requests</span>
+</thead>
+  <tr>
+    <th class="col">Account Name</th>
+    <th class="col">Request Name</th>
+    <th class="col">Due</th>
+  </tr>
+
+<% @requests = Request.order('duedate') %>
+
+<% @requests.each do |request| %>
+<% if request.asap == true %>
+  <tr>
+    <td class="col"><%= request.accountname %></td>
+    <td class="col"><%= request.requestname %></td>
+    <td class="col"><%= request.duedate %></td>
+    <td class="col2"> <%= link_to 'Show', request %></td>
+    <td class="col2"><%= link_to 'Delete', request, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+<% end %>
+</table>
+
+<br />
+
+<table class="showall">
+<thead>
+<span class="tabletitle">Standard Requests</span>
+</thead>
+  <tr>
+    <th class="col">Account Name</th>
+    <th class="col">Request Name</th>
+    <th class="col">Due</th>
+  </tr>
+
+<% @requests.each do |request| %>
+<% if request.asap == false %>
+  <tr>
+    <td class="col"><%= request.accountname %></td>
+    <td class="col"><%= request.requestname %></td>
+    <td class="col"><%= request.duedate %></td>
+    <td class="col2"><%= link_to 'Show', request %></td>
+    <td class="col2"><%= link_to 'Delete', request, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+<% end %>
+</table>
+

@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  accountname: MyString
+  duedate: 2013-05-31
+  asap: false
+  type: 
+  description: MyText
+  specifications: MyText
+  contact: MyString
+  requestname: MyString
+  comments: MyText
+  artreview: false
+  contentreview: false
+  references: MyText
+
+two:
+  accountname: MyString
+  duedate: 2013-05-31
+  asap: false
+  type: 
+  description: MyText
+  specifications: MyText
+  contact: MyString
+  requestname: MyString
+  comments: MyText
+  artreview: false
+  contentreview: false
+  references: MyText

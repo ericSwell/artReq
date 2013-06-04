@@ -1,0 +1,4 @@
+class Request < ActiveRecord::Base
+self.inheritance_column = nil;
+  attr_accessible :accountname, :artreview, :asap, :comments, :contact, :contentreview, :description, :duedate, :references, :requestname, :specifications, :type
+end

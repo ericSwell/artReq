@@ -1,0 +1,118 @@
+<p id="notice"><%= notice %></p>
+
+  <div class="leftColumn">
+      <div class="row">
+          <label>Account Name :</label>
+      </div>
+      <div class="row">
+          <label>Request Title :</label>
+      </div>
+      <div class="row">
+          <label>Contact Email :</label>
+      </div>
+      <div class="row">
+          <label>Due Date :</label>
+      </div>
+      <div class="row">
+          <label>Required ASAP? :</label>
+      </div>
+      <div class="row">
+          <label>Art Type :</label>
+      </div>
+      <div class="textAreaRow">
+          <label>Short Description :</label>
+      </div>
+      <div class="textAreaRow">
+          <label>Art Specifications :</label>
+      </div>
+      <% if @request.references == nil || @request.references.empty? %>
+      <% else %>
+      <div class="textAreaRow">
+          <label>References :</label>
+      </div>
+      <% end %>
+      <% if @request.comments == nil || @request.comments.empty? %>
+      <% else %>
+      <div class="textAreaRow">
+          <label>Comments :</label>
+      </div>
+      <% end %>
+      <div class="textAreaRow">
+          <label>Status :</label>
+      </div>
+      <!--
+      <div class="row">
+          <label>Needs Art Review?</label>
+      </div>
+      <div class="row">
+          <label>Needs Content Review?</label>
+      </div>
+      -->
+  </div>
+
+  <div class="rightColumn view">
+      <div class="row">
+          <%= @request.accountname %>
+      </div>
+      <div class="row">
+          <%= @request.requestname %>
+      </div>
+      <div class="row">
+          <%= @request.contact %>
+      </div>
+      <div class="row">
+          <%= @request.duedate %>
+      </div>
+      <div class="row">
+          <% if @request.asap == true %>
+          <%= "Yes" %>
+          <% else %>
+          <%= "No" %>
+          <% end %>
+      </div>
+      <div class="row">
+          <%= @request.type %>
+      </div>
+      <div class="textAreaRow">
+          <%= @request.description %>
+      </div>
+      <div class="textAreaRow">
+          <%= @request.specifications %>
+      </div>
+      <% if @request.references == nil || @request.references.empty? %>
+      <% else %>
+      <div class="textAreaRow">
+          <%= @request.references %>
+      </div>
+      <% end %>
+      <% if @request.comments == nil || @request.comments.empty? %>
+      <% else %>
+      <div class="textAreaRow">
+          <%= @request.comments %>
+      </div>
+      <% end %>
+      <div class="textAreaRow">
+          <%= @request.status %>
+      </div>
+      <!--
+      <div class="row">
+          <% if @request.artreview == true %>
+          <%= "Yes" %>
+          <% else %>
+          <%= "No" %>
+          <% end %>
+      </div>
+      <div class="row">
+          <% if @request.contentreview == true %>
+          <%= "Yes" %>
+          <% else %>
+          <%= "No" %>
+          <% end %>
+      </div>
+       -->
+  </div>
+
+<div class="footer">
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Back', requests_path %>
+</div>

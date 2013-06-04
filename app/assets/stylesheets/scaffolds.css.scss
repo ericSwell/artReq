@@ -1,0 +1,49 @@
+body {
+  background-color: #fff;
+  color: #333;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+p, ol, ul, td {
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+    color: #fff;
+    text-decoration:none;
+  &:hover {
+    color: #000;
+  }
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors input,.field_with_errors textarea {
+  border-color:rgb(165, 13, 13);
+}
+
+#error_explanation {
+padding: 7px;
+padding-bottom: 0;
+margin-bottom: 20px;
+float: left;
+width: 100%;
+}
+#error_explanation h2{
+  color:rgb(165, 13, 13);
+}
