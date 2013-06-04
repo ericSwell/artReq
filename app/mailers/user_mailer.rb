@@ -24,12 +24,12 @@ end
 
 def update_email_contact(request)
 	@request = request
-mail(:to => request.contact, :subject => 'Art Request for #{request.accountname} - #{request.requestname} Updated!')
+mail(:to => request.contact, :subject => 'Art Request Updated!')
 end
 
 def update_email(request)
 	@request = request
-mail(:to => 'eric@swellny.com', :subject => 'Art Request for #{request.accountname} - #{request.requestname} Updated!')
+mail(:to => 'eric@swellny.com', :subject => 'Art Request Updated!')
 end
 
 end
