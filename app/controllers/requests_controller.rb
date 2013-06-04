@@ -63,8 +63,8 @@ class RequestsController < ApplicationController
       if @request.update_attributes(params[:request])
         format.html { redirect_to @request, :notice => 'Request was successfully updated.' }
         format.json { head :no_content }
-        UserMailer.update_email(@request).deliver
-        UserMailer.update_email_contact(@request).deliver
+        ArtMailer.update_email(@request).deliver
+        ArtMailer.update_email_contact(@request).deliver
       else
         format.html { render :action => "edit" }
         format.json { render :json => @request.errors, :status => :unprocessable_entity }

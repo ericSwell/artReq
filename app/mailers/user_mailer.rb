@@ -2,8 +2,6 @@ class UserMailer < ActionMailer::Base
   default :from => 'dev@swellny.com'
  
   def request_email(request)
-  	#some sort of if would go here to send to different people
-  	#also some sort of if to use contact email as the from email
   	@request = request
 
 if(request.type == "Wireframe")    
@@ -22,20 +20,16 @@ if(request.type == "Rough Art")
 mail(:to => 'eric@swellny.com', :subject => 'Art Request for rough artwork received.')
 end
 
-
 end
 
 def update_email_contact(request)
 	@request = request
-
 mail(:to => request.contact, :subject => 'Art Request updated!')
 end
 
 def update_email(request)
 	@request = request
-
 mail(:to => 'eric@swellny.com', :subject => 'Art Request updated!')
 end
-
 
 end
