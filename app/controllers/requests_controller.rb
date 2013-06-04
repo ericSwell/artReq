@@ -61,10 +61,10 @@ class RequestsController < ApplicationController
 
     respond_to do |format|
       if @request.update_attributes(params[:request])
-        UserMailer.update_email(@request).deliver
+        UserMailer.update_email(@request).deliver!
         format.html { redirect_to @request, :notice => 'Request was successfully updated.' }
         format.json { head :no_content }
-        UserMailer.update_email_contact(@request).deliver
+        UserMailer.update_email_contact(@request).deliver!
         format.html { redirect_to @request, :notice => 'Request was successfully updated.' }
         format.json { head :no_content }
       else
