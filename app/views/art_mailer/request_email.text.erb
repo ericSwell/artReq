@@ -1,0 +1,14 @@
+New Art Request Received!
+
+Account Name :  <%= @request.accountname %>
+Request Title :  <%= @request.requestname %>
+Contact Email :  <%= @request.contact %>
+Due Date :  <%= @request.duedate %>
+Required ASAP? :  <% if @request.asap == true %><%= "Yes" %> <% else %><%= "No" %><% end %>
+Art Type : <%= @request.type %>
+Description :  <%= @request.description %>
+Specifications :  <%= @request.specifications %>
+References : <%= @request.references %>
+Comments : <%= @request.comments %>
+Needs Art Review? <% if @request.artreview == true %><%= "Yes" %><% else %><%= "No" %><% end %>
+Needs Content Review? <% if @request.contentreview == true %><%= "Yes" %><% else %><%= "No" %><% end %>

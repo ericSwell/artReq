@@ -1,0 +1,22 @@
+Art Request Updated!
+
+Account Name :  <%= @request.accountname %>
+Request Title :  <%= @request.requestname %>
+Contact Email :  <%= @request.contact %>
+Due Date :  <%= @request.duedate %>
+Required ASAP? :  <% if @request.asap == true %><%= "Yes" %> <% else %><%= "No" %><% end %>
+Art Type : <%= @request.type %>
+Short Description :  <%= @request.description %>
+Art Specifications :  <%= @request.specifications %>
+      <% if @request.references == nil || @request.references.empty? %>
+      <% else %>
+References : <%= @request.references %>
+	  <% end %>
+	  <% if @request.comments == nil || @request.comments.empty? %>
+      <% else %>
+Comments : <%= @request.comments %>
+	  <% end %>
+
+Status : <%= @request.status %>
+
+All requests can be found here :  http://mighty-beach-3814.herokuapp.com/requests/
