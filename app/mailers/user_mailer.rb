@@ -5,7 +5,7 @@ class UserMailer < ActionMailer::Base
   	@request = request
 
 if(request.type == "Wireframe")    
-mail(:to => 'eric@swellny.com', :subject => 'Art Request for wireframe artwork received.')
+mail(:to => Settings.email.main, :subject => 'Art Request for wireframe artwork received.')
 end
 
 if(request.type == "Final Art")
