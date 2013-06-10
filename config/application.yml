@@ -1,0 +1,13 @@
+# config/application.yml
+defaults: &defaults
+  email:
+    main: eric@swellny.com
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
