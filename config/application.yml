@@ -1,7 +1,7 @@
 # config/application.yml
 defaults: &defaults
-  email:
-    send: eric@swellny.com
+   email:
+    to: eric@swellny.com   
     from: dev@swellny.com
 
 development:
